@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+
+{%  block title %} Fertilizer Recommendation{% endblock %}
+{%block styles%} <link rel="stylesheet" type="text/css" href= "{{url_for('static', filename= 'css/fertilizer_recommendation_styles.css' ) }}"> {% endblock %}
+
+{%block body %}
+
+<div class="left" id="left">
+  
+</div> 
+
+<div class="center" id="center">
+
+  <h2>
+    <span class="first-word">FERTILIZER</span><br>
+    <span class="second-word">RECOMMENDATION</span>
+  </h2>
+
+  <form action="/fertilizer_name" method="post">
+
+    <label for="nitrogen">Nitrogen</label>
+    <input  class="input_field" type="number" name="nitrogen" id="nitrogen" step="0.1"><br>
+
+    <label for="Phosphorous">Phosphorous</label>
+    <input class="input_field" type="number" name="phosphorous" id="Phosphorous" ><br>
+
+    <label for="Potassium">Potassium</label>    
+    <input class="input_field" type="number" name="potassium" id="Potassium" ><br>
+
+
+    <label for="temperature">Temperature</label>
+    <input class="input_field"  type="number" name="temperature" id="temperature" required><br>
+    
+    <label for="humidity">Humidity</label>
+    <input class="input_field" type="number" name="humidity" id="humidity" required><br>
+
+    <label for="moisture">Moisture</label>
+    <input class="input_field" type="number" name="moisture" id="moisture"><br>
+
+
+    <div class="form_group">
+      <label for="crop type"><b>Crop Type</b></label>
+      <select class="input_field" id="crop type" name="cropType" required>
+        <option>Barley</option>
+        <option>Cotton</option>
+        <option>Ground Nuts</option>
+        <option>Maize</option>
+        <option>Millets</option>
+        <option>Oil seeds</option>
+        <option>Paddy</option>
+        <option>Pulses</option>
+        <option>Sugarcane</option>
+        <option>Tobacco</option>
+        <option>Wheat</option> 
+      </select>
+      <br />
+      <label for="soil"><b>Soil Type</b></label>
+      <select class="input_field" id="soil" name="soilType" required>
+        <option>Black</option>
+        <option>Clayey</option>
+        <option>Loamy</option>
+        <option>Red</option>
+        <option>Sandy</option>
+      </select>
+      
+    </div>
+    <input class="button" type="submit" value="predict" class="predict_button">
+  </form>
+
+</div>
+ 
+<div class="right" id="right">
+
+</div>
+
+
+{% endblock %}
